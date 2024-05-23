@@ -146,7 +146,7 @@ public class PerfumeServiceImpl implements PerfumeService {
 //                S3Object image = amazonS3.getObject(new GetObjectRequest(bucketName, resultFilename));
                 amazonS3.putObject(new PutObjectRequest(bucketName, resultFilename, fileConvert)
                         .withCannedAcl(CannedAccessControlList.PublicRead));
-                perfume.setFilename("https://ptit-perfume.s3.ap-southeast-1.amazonaws.com/".concat(resultFilename));
+                perfume.setFilename("https://ptit-perfume-image.s3.ap-southeast-1.amazonaws.com/".concat(resultFilename));
             } else {
                 perfume.setFilename("empty.jpg");
             }
